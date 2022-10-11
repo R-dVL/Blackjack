@@ -7,19 +7,20 @@ class Deck {
         char diamonds[13];
         char hearts[13];
         char spades[13];
+
     public:
         Deck(void);  // Constructor
-        char StealCard(int card);  // Steal card from deck
+        char StealCard(std::string type, int card);  // Steal card from deck
         // Clubs setter and getter
-        void SetClubs(std::string card[]);
+        void SetClubs(int card, char value);
         char GetClubs(int card);
         // Hearts setter and getter
-        void SetHearts(std::string card[]);
-        std::string GetHearts(int card);
+        void SetHearts(int card, char value);
+        char GetHearts(int card);
         // Diamonds setter and getter
-        void SetDiamonds(std::string card[]);
-        std::string GetDiamonds(int card);
+        void SetDiamonds(int card, char value);
+        char GetDiamonds(int card);
         // Spades setter and getter
-        void SetSpades(std::string card[]);
-        std::string GetSpades(int card);
+        void SetSpades(int card, char value);
+        char GetSpades(int card);
 };
