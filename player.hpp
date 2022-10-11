@@ -2,16 +2,17 @@
 
 class Player {
 
-    protected:
-        std::string name;
-        int points;
+    private:
+        std::string name;   // Player name
+        int points = 0;     // Player points
     
     public:
-        Player(const int points, const std::string & name);
+        Player(const std::string name);  // Constructor
 
+        // Getters and setters
         int GetPoints(void) const;
         void SetPoints(const int points);
-        std::string & GetName(void) const;
-        void SetName(const std::string & name);
+        std::string GetName(void) const;
+        void SetName(const std::string name);
         
 };
