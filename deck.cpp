@@ -3,111 +3,67 @@
 
 //Constructor
 Deck::Deck(void){
-    // Clubs
-    this->clubs[0] = 'A';
-    this->clubs[1] = '1';
-    this->clubs[2] = '2';
-    this->clubs[3] = '3';
-    this->clubs[4] = '4';
-    this->clubs[5] = '5';
-    this->clubs[6] = '6';
-    this->clubs[7] = '7';
-    this->clubs[8] = '8';
-    this->clubs[9] = '9';
-    this->clubs[10] = "10";
-    this->clubs[11] = 'J';
-    this->clubs[12] = 'Q';
-    this->clubs[13] = 'K';
-    // Hearts
-    this->hearts[0] = 'A';
-    this->hearts[1] = '1';
-    this->hearts[2] = '2';
-    this->hearts[3] = '3';
-    this->hearts[4] = '4';
-    this->hearts[5] = '5';
-    this->hearts[6] = '6';
-    this->hearts[7] = '7';
-    this->hearts[8] = '8';
-    this->hearts[9] = '9';
-    this->hearts[10] = "10";
-    this->hearts[11] = 'J';
-    this->hearts[12] = 'Q';
-    this->hearts[13] = 'K';
-    // Diamonds
-    this->diamonds[0] = 'A';
-    this->diamonds[1] = '1';
-    this->diamonds[2] = '2';
-    this->diamonds[3] = '3';
-    this->diamonds[4] = '4';
-    this->diamonds[5] = '5';
-    this->diamonds[6] = '6';
-    this->diamonds[7] = '7';
-    this->diamonds[8] = '8';
-    this->diamonds[9] = '9';
-    this->diamonds[10] = "10";
-    this->diamonds[11] = 'J';
-    this->diamonds[12] = 'Q';
-    this->diamonds[13] = 'K';
-    // Spades
-    this->spades[0] = 'A';
-    this->spades[1] = '1';
-    this->spades[2] = '2';
-    this->spades[3] = '3';
-    this->spades[4] = '4';
-    this->spades[5] = '5';
-    this->spades[6] = '6';
-    this->spades[7] = '7';
-    this->spades[8] = '8';
-    this->spades[9] = '9';
-    this->spades[10] = "10";
-    this->spades[11] = 'J';
-    this->spades[12] = 'Q';
-    this->spades[13] = 'K';
+    this->deck[0][0] = "A";  // Clubs A
+    this->deck[0][1] = "1";  // Clubs 1
+    this->deck[0][2] = "2";  // Clubs 2
+    this->deck[0][3] = "3";  // Clubs 3
+    this->deck[0][4] = "4";  // Clubs 4
+    this->deck[0][5] = "5";  // Clubs 5
+    this->deck[0][6] = "6";  // Clubs 6
+    this->deck[0][7] = "7";  // Clubs 7
+    this->deck[0][8] = "8";  // Clubs 8
+    this->deck[0][9] = "9";  // Clubs 9
+    this->deck[0][10] = "10";  // Clubs 10
+    this->deck[0][11] = "J";  // Clubs J
+    this->deck[0][12] = "Q";  // Clubs Q
+    this->deck[0][13] = "K";  // Clubs K
+    this->deck[1][0] = "A";  // Spades A
+    this->deck[1][1] = "1";  // Spades 1
+    this->deck[1][2] = "2";  // Spades 2
+    this->deck[1][3] = "3";  // Spades 3
+    this->deck[1][4] = "4";  // Spades 4
+    this->deck[1][5] = "5";  // Spades 5
+    this->deck[1][6] = "6";  // Spades 6
+    this->deck[1][7] = "7";  // Spades 7
+    this->deck[1][8] = "8";  // Spades 8
+    this->deck[1][9] = "9";  // Spades 9
+    this->deck[1][10] = "10";  // Spades 10
+    this->deck[1][11] = "J";  // Spades J
+    this->deck[1][12] = "Q";  // Spades Q
+    this->deck[1][13] = "K";  // Spades K
+    this->deck[2][0] = "A";  // Diamonds A 
+    this->deck[2][1] = "1";  // Diamonds 1
+    this->deck[2][2] = "2";  // Diamonds 2
+    this->deck[2][3] = "3";  // Diamonds 3
+    this->deck[2][4] = "4";  // Diamonds 4
+    this->deck[2][5] = "5";  // Diamonds 5
+    this->deck[2][6] = "6";  // Diamonds 6
+    this->deck[2][7] = "7";  // Diamonds 7
+    this->deck[2][8] = "8";  // Diamonds 8
+    this->deck[2][9] = "9";  // Diamonds 9
+    this->deck[2][10] = "10";  // Diamonds 10
+    this->deck[2][11] = "J";  // Diamonds J
+    this->deck[2][12] = "Q";  // Diamonds Q
+    this->deck[2][13] = "K";  // Diamonds K
+    this->deck[3][0] = "A";  // Hearts A
+    this->deck[3][1] = "1";  // Hearts 1
+    this->deck[3][2] = "2";  // Hearts 2
+    this->deck[3][3] = "3";  // Hearts 3
+    this->deck[3][4] = "4";  // Hearts 4
+    this->deck[3][5] = "5";  // Hearts 5
+    this->deck[3][6] = "6";  // Hearts 6
+    this->deck[3][7] = "7";  // Hearts 7
+    this->deck[3][8] = "8";  // Hearts 8
+    this->deck[3][9] = "9";  // Hearts 9
+    this->deck[3][10] = "10";  // Hearts 10
+    this->deck[3][11] = "J";  // Hearts J
+    this->deck[3][12] = "Q";  // Hearts Q
+    this->deck[3][13] = "K";  // Hearts K
 }
 // Clubs setter and getter
-std::string Deck::GetClubs(int card) {
-    return this-> clubs[card];
+std::string Deck::GetCard(int type, int card) {
+    return this->deck[type][card];
 }
-void Deck::SetClubs(int card, std::string value) {
-    this->clubs[card] = value;
-}
-// Hearts setter and getter
-std::string Deck::GetHearts(int card) {
-    return this-> hearts[card];
-}
-void Deck::SetHearts(int card, std::string value) {
-    this->hearts[card] = value;
-}
-// Diamonds setter and getter
-std::string Deck::GetDiamonds(int card) {
-    return this-> diamonds[card];
-}
-void Deck::SetDiamonds(int card, std::string value) {
-    this->diamonds[card] = value;
-}
-// Spades setter and getter
-std::string Deck::GetSpades(int card) {
-    return this-> spades[card];
-}
-void Deck::SetSpades(int card, std::string value) {
-    this->spades[card] = value;
-}
-
-void Deck::StealCard(std::string type, int card) {
-    if (type == "clubs") {
-        this->GetClubs(card);
-        this->SetClubs(card, "0");
-    }
-    else if (type == "diamonds") {
-        this->GetDiamonds(card);
-        this->SetDiamonds(card, "0");
-    }
-    else if (type == "hearts") {
-        this->GetHearts(card);
-        this->SetHearts(card, "0");
-    }
-    else if (type == "spades") {
-        this->GetSpades(card);
-        this->SetSpades(card, "0");
-    }
+void Deck::SetCard(int type, int card, std::string value) {
+    this->deck[type][card] = value;
 }
