@@ -10,7 +10,7 @@ class Deck {
 
     public:
         Deck(void);  // Constructor
-        char StealCard(std::string type, int card);  // Steal card from deck
+        void StealCard(std::string type, int card);  // Steal card from deck
         // Clubs setter and getter
         void SetClubs(int card, char value);
         char GetClubs(int card);

@@ -93,7 +93,7 @@ void Deck::SetSpades(int card, char value) {
     this->spades[card] = value;
 }
 
-char Deck::StealCard(std::string type, int card) {
+void Deck::StealCard(std::string type, int card) {
     if (type == "clubs") {
         this->GetClubs(card);
         this->SetClubs(card, '0');

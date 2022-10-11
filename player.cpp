@@ -1,9 +1,9 @@
 #include <string>
 #include "player.hpp"
 
-Player::Player(const std::string name) {
+Player::Player(const std::string name, const int points) {
     this->name = name;
-    this->points = 0;
+    this->points = points;
 }
 
 std::string Player::GetName(void) const {

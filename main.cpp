@@ -5,8 +5,7 @@
 #include "deck.hpp"
 
 int main() {
-    Player Player1 = Player("Rast");
-    Deck BlackJackDeck = Deck();
-    
-    std::cout << BlackJackDeck.GetClubs(1);
+    Player player = Player("Rast", 0);
+    Deck deck = Deck();
+    std::cout << deck.GetClubs(0);
 }

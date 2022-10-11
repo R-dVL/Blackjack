@@ -7,12 +7,11 @@ class Player {
         int points = 0;     // Player points
     
     public:
-        Player(const std::string name);  // Constructor
+        Player(const std::string name, const int points);  // Constructor
 
-        // Getters and setters
-        int GetPoints(void) const;
-        void SetPoints(const int points);
-        std::string GetName(void) const;
-        void SetName(const std::string name);
+        int GetPoints(void) const;  // Points getter
+        void SetPoints(const int points);  // Points Setter
+        std::string GetName(void) const;  // Name Getter
+        void SetName(const std::string name);  // Name Setter
         
 };
