@@ -7,5 +7,9 @@
 int main() {
     Player player = Player("Rast", 0);
     Deck deck = Deck();
-    std::cout << deck.GetClubs(0);
+    std::cout << deck.GetClubs(10) << std::endl;
+    deck.StealCard("clubs", 10);
+    std::cout << deck.GetClubs(10) << std::endl;
+    deck.SetClubs(10, "10");
+    std::cout << deck.GetClubs(10) << std::endl;
 }

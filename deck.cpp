@@ -14,7 +14,7 @@ Deck::Deck(void){
     this->clubs[7] = '7';
     this->clubs[8] = '8';
     this->clubs[9] = '9';
-    this->clubs[10] = '10';
+    this->clubs[10] = "10";
     this->clubs[11] = 'J';
     this->clubs[12] = 'Q';
     this->clubs[13] = 'K';
@@ -29,7 +29,7 @@ Deck::Deck(void){
     this->hearts[7] = '7';
     this->hearts[8] = '8';
     this->hearts[9] = '9';
-    this->hearts[10] = '10';
+    this->hearts[10] = "10";
     this->hearts[11] = 'J';
     this->hearts[12] = 'Q';
     this->hearts[13] = 'K';
@@ -44,7 +44,7 @@ Deck::Deck(void){
     this->diamonds[7] = '7';
     this->diamonds[8] = '8';
     this->diamonds[9] = '9';
-    this->diamonds[10] = '10';
+    this->diamonds[10] = "10";
     this->diamonds[11] = 'J';
     this->diamonds[12] = 'Q';
     this->diamonds[13] = 'K';
@@ -59,55 +59,55 @@ Deck::Deck(void){
     this->spades[7] = '7';
     this->spades[8] = '8';
     this->spades[9] = '9';
-    this->spades[10] = '10';
+    this->spades[10] = "10";
     this->spades[11] = 'J';
     this->spades[12] = 'Q';
     this->spades[13] = 'K';
 }
 // Clubs setter and getter
-char Deck::GetClubs(int card) {
+std::string Deck::GetClubs(int card) {
     return this-> clubs[card];
 }
-void Deck::SetClubs(int card, char value) {
+void Deck::SetClubs(int card, std::string value) {
     this->clubs[card] = value;
 }
 // Hearts setter and getter
-char Deck::GetHearts(int card) {
+std::string Deck::GetHearts(int card) {
     return this-> hearts[card];
 }
-void Deck::SetHearts(int card, char value) {
+void Deck::SetHearts(int card, std::string value) {
     this->hearts[card] = value;
 }
 // Diamonds setter and getter
-char Deck::GetDiamonds(int card) {
+std::string Deck::GetDiamonds(int card) {
     return this-> diamonds[card];
 }
-void Deck::SetDiamonds(int card, char value) {
+void Deck::SetDiamonds(int card, std::string value) {
     this->diamonds[card] = value;
 }
 // Spades setter and getter
-char Deck::GetSpades(int card) {
+std::string Deck::GetSpades(int card) {
     return this-> spades[card];
 }
-void Deck::SetSpades(int card, char value) {
+void Deck::SetSpades(int card, std::string value) {
     this->spades[card] = value;
 }
 
 void Deck::StealCard(std::string type, int card) {
     if (type == "clubs") {
         this->GetClubs(card);
-        this->SetClubs(card, '0');
+        this->SetClubs(card, "0");
     }
     else if (type == "diamonds") {
         this->GetDiamonds(card);
-        this->SetDiamonds(card, '0');
+        this->SetDiamonds(card, "0");
     }
     else if (type == "hearts") {
         this->GetHearts(card);
-        this->SetHearts(card, '0');
+        this->SetHearts(card, "0");
     }
     else if (type == "spades") {
         this->GetSpades(card);
-        this->SetSpades(card, '0');
+        this->SetSpades(card, "0");
     }
 }
