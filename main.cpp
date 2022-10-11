@@ -5,7 +5,9 @@
 #include "deck.hpp"
 
 int main() {
-    Deck deck = Deck();
-    
-    std::cout << "ON";
+    std::cout << "Introduce tu nombre: " << std::endl;
+    std::string name;
+    std::cin >> name;
+    Player player = Player(name);
+    std::cout << player.GetName();
 }

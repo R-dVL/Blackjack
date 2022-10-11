@@ -1,10 +1,11 @@
 #include <string>
 #include "player.hpp"
 
+// Constructor
 Player::Player(const std::string name) {
     this->name = name;
     this->points = 0;
-    this->hand[0][0] = "0";  // Clubs A
+    /*this->hand[0][0] = "0";  // Clubs A
     this->hand[0][1] = "0";  // Clubs 1
     this->hand[0][2] = "0";  // Clubs 2
     this->hand[0][3] = "0";  // Clubs 3
@@ -59,24 +60,29 @@ Player::Player(const std::string name) {
     this->hand[3][10] = "0";  // Hearts 10
     this->hand[3][11] = "0";  // Hearts J
     this->hand[3][12] = "0";  // Hearts Q
-    this->hand[3][13] = "0";  // Hearts K
+    this->hand[3][13] = "0";  // Hearts K*/
 }
-
+// Name Getter
 std::string Player::GetName(void) const {
     return this->name;
 }
+// Name Setter
 void Player::SetName(std::string name) {
     this->name = name;
 }
+// Points Getter
 int Player::GetPoints(void) const {
     return this->points;
 }
+// Points Setter
 void Player::SetPoints(int points) {
     this->points = points;
 }
-std::string Player::GetHand(int type, int card) const {
+// Hand Getter
+/*std::string Player::GetHand(int type, int card) const {
     return this->hand[type][card];
 }
+// Hand Setter
 void Player::SetHand(int type, int card, std::string value) {
     this->hand[type][card] = value;
-}
+}*/

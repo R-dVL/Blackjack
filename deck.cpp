@@ -3,7 +3,7 @@
 
 //Constructor
 Deck::Deck(void){
-    this->deck[0][0] = "A";  // Clubs A
+    /*this->deck[0][0] = "A";  // Clubs A
     this->deck[0][1] = "1";  // Clubs 1
     this->deck[0][2] = "2";  // Clubs 2
     this->deck[0][3] = "3";  // Clubs 3
@@ -58,12 +58,13 @@ Deck::Deck(void){
     this->deck[3][10] = "10";  // Hearts 10
     this->deck[3][11] = "J";  // Hearts J
     this->deck[3][12] = "Q";  // Hearts Q
-    this->deck[3][13] = "K";  // Hearts K
+    this->deck[3][13] = "K";  // Hearts K*/
 }
-// Clubs setter and getter
-std::string Deck::GetCard(int type, int card) {
+// Card Getter
+/*std::string Deck::GetCard(int type, int card) {
     return this->deck[type][card];
 }
+// Card Setter
 void Deck::SetCard(int type, int card, std::string value) {
     this->deck[type][card] = value;
-}
+}*/

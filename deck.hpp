@@ -3,7 +3,7 @@
 
 class Deck {
     private:
-        std::string deck[3][13];  //0 = Clubs, 1 = Spades, 2 = Diamonds, 3 = Hearts
+        std::string deck[3][13];  // Types and Cards
 
     public:
         Deck(void);  // Constructor
