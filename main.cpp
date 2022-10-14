@@ -1,7 +1,3 @@
-#include <iostream>
-#include <string>
-#include <map>
-
 #include "player.hpp"
 #include "deck.hpp"
 
@@ -39,9 +35,14 @@ int CountPoints(multimap<string, string> hand) {
 }
 
 int main() {
+    // Init
     Deck deck = Deck();
+    Player NPC1 = Player("Cheka");
+    Player NPC2 = Player("Fran");
+    Player NPC3 = Player("Jota");
+    Player House = Player("The House");
 
-    // Inicio
+    // Start
     system("cls");
     cout << "Como deberia llamarte: ";
     string playerName;
@@ -51,24 +52,28 @@ int main() {
     system("PAUSE");
     system("cls");
 
-    // Rondas
+    // Rounds
     cout << "Introduce el numero de rondas: ";
     int rounds;
     cin >> rounds;
     int roundNumber = 1;
 
-    // Partida
+    // Game
     while (rounds != 0) {
         system("cls");
         cout << "Ronda " << roundNumber << endl;
         cout << "=========" << endl;
-
-
+        map<string, string> result;
+        result = deck.GetRandCard();
+        for (auto iter = result.begin(); iter != result.end(); ++iter) {
+            cout << iter->first <<endl;
+            cout << iter->second <<endl;
+        }
         ++roundNumber;
         --rounds;
         system("PAUSE");
     }
-    // Resolución de la partida
+    // Game Resolution
     cout << player.GetName() << " enseña su mano: " << endl;
     player.SetPoints(CountPoints(player.GetHand()));
     cout << "Puntos: " << player.GetPoints();

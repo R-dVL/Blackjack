@@ -13,7 +13,7 @@ class Deck {
 
     public:
         Deck(void);  // Constructor
-        multimap<string, string> GetDeck() const;  // Hand Getter
+        multimap<string, string> GetDeck(void) const;  // Hand Getter
         void SetDeck(string type, string value);  // Hand Setter
         void EraseCard(string type, string value); // Card Eraser
         void ShowCards(void) const; // Shows Deck Cards
