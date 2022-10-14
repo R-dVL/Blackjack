@@ -39,6 +39,7 @@ int CountPoints(multimap<string, string> hand) {
 }
 
 int main() {
+    Deck deck = Deck();
 
     // Inicio
     system("cls");
@@ -61,6 +62,8 @@ int main() {
         system("cls");
         cout << "Ronda " << roundNumber << endl;
         cout << "=========" << endl;
+
+
         ++roundNumber;
         --rounds;
         system("PAUSE");
