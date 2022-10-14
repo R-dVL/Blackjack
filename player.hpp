@@ -17,7 +17,7 @@ class Player {
         int GetPoints(void) const;  // Points getter
         void SetPoints(const int points);  // Points Setter
         multimap<string, string> GetHand() const;  // Hand Getter
-        void SetHand(string type, string value);  // Hand Setter
+        void SetHand(map<string, string> cards);  // Hand Setter
         void EraseCard(string type, string value); // Card Eraser
         void ShowHand() const; // Show Hand
 };

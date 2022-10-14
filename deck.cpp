@@ -92,6 +92,7 @@ map<string, string> Deck::GetRandCard(void) {
         type = iter->first;
         card = iter->second;
     }
+    this->EraseCard(type, card);
     result.insert(pair<string, string>(type, card));
     return result;
 }

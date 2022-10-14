@@ -3,6 +3,19 @@
 
 using namespace std;
 
+Deck deck = Deck();
+
+map<string, string> StealCard(void) {
+    map<string, string> result;
+    string type;
+    string card;
+    result = deck.GetRandCard();
+    for (auto iter = result.begin(); iter != result.end(); ++iter) {
+        type = iter->first;
+        card = iter->second;
+    }
+    return result;
+}
 int CountPoints(multimap<string, string> hand) {
     int points = 0;
     int ases = 0;
@@ -36,7 +49,6 @@ int CountPoints(multimap<string, string> hand) {
 
 int main() {
     // Init
-    Deck deck = Deck();
     Player NPC1 = Player("Cheka");
     Player NPC2 = Player("Fran");
     Player NPC3 = Player("Jota");
@@ -63,12 +75,12 @@ int main() {
         system("cls");
         cout << "Ronda " << roundNumber << endl;
         cout << "=========" << endl;
-        map<string, string> result;
-        result = deck.GetRandCard();
-        for (auto iter = result.begin(); iter != result.end(); ++iter) {
-            cout << iter->first <<endl;
-            cout << iter->second <<endl;
-        }
+
+        player.SetHand(deck.GetRandCard());
+        cout << "Robas." << endl;
+        House.SetHand(deck.GetRandCard());
+        cout << "Roba la casa." << endl;
+
         ++roundNumber;
         --rounds;
         system("PAUSE");
@@ -77,4 +89,8 @@ int main() {
     cout << player.GetName() << " enseña su mano: " << endl;
     player.SetPoints(CountPoints(player.GetHand()));
     cout << "Puntos: " << player.GetPoints();
+
+    cout << player.GetName() << " enseña su mano: " << endl;
+    House.SetPoints(CountPoints(House.GetHand()));
+    cout << "Puntos: " << House.GetPoints();
 }

@@ -27,8 +27,14 @@ multimap<string, string> Player::GetHand() const {
     return this->hand;
 }
 // Hand Setter
-void Player::SetHand(string type, string value) {
-    this->hand.insert(pair<string, string>(type, value));
+void Player::SetHand(map<string, string> cards) {
+    string type;
+    string card;
+    for (auto iter = cards.begin(); iter != cards.end(); ++iter) {
+        type = iter->first;
+        card = iter->second;
+    }
+    this->hand.insert(pair<string, string>(type, card));
 }
 // Hand Card Eraser
 void Player::EraseCard(string type, string card) {
