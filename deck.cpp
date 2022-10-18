@@ -94,6 +94,5 @@ map<string, string> Deck::GetRandCard(void) {
     }
     this->EraseCard(type, card);
     result.insert(pair<string, string>(type, card));
-    cout << type << "\n" << card;
     return result;
 }
