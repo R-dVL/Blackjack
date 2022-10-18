@@ -59,32 +59,35 @@ int CountPoints(Player jugador) {
 }
 // Resolution
 void Resolution (Player foo, Player casino) {
+    cout << foo.GetName() << " have " << foo.GetPoints() << " points." << endl;
+    cout << casino.GetName() << " have " << casino.GetPoints() << " points." << endl;
     if ((foo.GetPoints() == 21) && (casino.GetPoints() != 21)) {
         cout << "¡BlackJack!\n" << endl;
     } else if ((foo.GetPoints() > casino.GetPoints()) && (foo.GetPoints() < 21)) {
         cout << "You won!\n" << endl;
     } else if ((foo.GetPoints() < 21) && (casino.GetPoints() > 21)) {
-        cout << "So close...\n" << endl;
+        cout << "That was close...\n" << endl;
     } else {
         cout << "The House always win.\n" << endl;
     }
+    system("PAUSE");
 }
-
-
+// Game
 int main() {
     // Start
     system("cls");
-    cout << "Como deberia llamarte: ";
+    cout << "How should I call you?\n";
     string playerName;
     cin >> playerName;
     player.SetName(playerName);
-    cout << "De acuerdo " << player.GetName() << ", comencemos..." << endl;
+    system("cls");
+    cout << "Ok " << player.GetName() << ", Let's start..." << endl;
     cout << endl;
     system("PAUSE");
     system("cls");
 
-    // Rounds
-    cout << "Introduce el numero de rondas: ";
+    // Set Rounds
+    cout << "Enter the number of rounds: ";
     int rounds;
     cin >> rounds;
     int roundNumber = 1;
@@ -92,19 +95,19 @@ int main() {
     // Game loop
     while (rounds != 0) {
         system("cls");
-        cout << "Ronda " << roundNumber << endl;
+        cout << "Round " << roundNumber << endl;
         cout << "=========" << endl;
 
         // Player Turn
         while (true) {
-            cout << "Tu turno, Que eliges hacer?\n" << "1. Robar carta.\n" << "2. Pasar turno.\n" << endl;
+            cout << "Your turn, what do you want to do?\n" << "1. Draw card.\n" << "2. Pass your turn.\n" << endl;
             int election;
             cin >> election;
             system("cls");
 
             if (election == 1) {
                 player.SetHand(deck.GetRandCard());
-                cout << player.GetName() <<" roba una carta" << endl;
+                cout << player.GetName() <<" draws a card" << endl;
                 player.ShowHand();
                 cout << endl;
                 system("PAUSE");
@@ -112,13 +115,13 @@ int main() {
                 break;
 
             } else if (election == 2) {
-                cout << "Pasas el turno\n" << endl;
+                cout << player.GetName() << "pass his turn\n" << endl;
                 system("PAUSE");
                 system("cls");
                 break;
 
             } else {
-                cout << "Introduce un valor valido\n" << endl;
+                cout << "Enter a valid option\n" << endl;
                 system("PAUSE");
                 continue;
             }
@@ -128,11 +131,11 @@ int main() {
 
         if (NPCTurn(house) == 1) {
             house.SetHand(deck.GetRandCard());
-            cout << house.GetName() <<" roba una carta\n" << endl;
+            cout << house.GetName() <<" draws a card\n" << endl;
             system("PAUSE");
 
         } else {
-            cout << house.GetName() << " pasa el turno\n" << endl;
+            cout << house.GetName() << " pass his turn\n" << endl;
             system("PAUSE");
         }
         
@@ -149,6 +152,7 @@ int main() {
     cout << player.GetName() << "'s points: " << player.GetPoints() << endl;
     cout << endl;
     system("PAUSE");
+
     // The House
     system("cls");
     cout << house.GetName() << " shows his hand: \n" << endl;
@@ -158,6 +162,7 @@ int main() {
     cout << house.GetName() << "'s points: " << house.GetPoints() << endl;
     cout << endl;
     system("PAUSE");
+
     // Game Resolution
     system("cls");
     Resolution(player, house);
