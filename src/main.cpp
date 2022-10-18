@@ -11,6 +11,7 @@ Player house = Player("The House");
 int NPCTurn(Player NPC) {
     if (NPC.GetPoints() <= 10) {
         return 1;
+
     } else if (NPC.GetPoints() > 10) {
         srand (time(NULL));
         int randomNumber = 1 + (rand() % 6);
@@ -56,6 +57,19 @@ int CountPoints(Player jugador) {
     }
     return points;
 }
+// Resolution
+void Resolution (Player foo, Player casino) {
+    if ((foo.GetPoints() == 21) && (casino.GetPoints() != 21)) {
+        cout << "¡BlackJack!\n" << endl;
+    } else if ((foo.GetPoints() > casino.GetPoints()) && (foo.GetPoints() < 21)) {
+        cout << "You won!\n" << endl;
+    } else if ((foo.GetPoints() < 21) && (casino.GetPoints() > 21)) {
+        cout << "So close...\n" << endl;
+    } else {
+        cout << "The House always win.\n" << endl;
+    }
+}
+
 
 int main() {
     // Start
@@ -125,7 +139,7 @@ int main() {
         ++roundNumber;
         --rounds;
     }
-    // Game Resolution
+    // Points count
     // Player
     system("cls");
     cout << player.GetName() << " shows his hand: \n" << endl;
@@ -144,4 +158,7 @@ int main() {
     cout << house.GetName() << "'s points: " << house.GetPoints() << endl;
     cout << endl;
     system("PAUSE");
+    // Game Resolution
+    system("cls");
+    Resolution(player, house);
 }
