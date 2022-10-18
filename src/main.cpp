@@ -6,6 +6,9 @@ using namespace std;
 Deck deck = Deck();
 Player player = Player("Player");
 Player house = Player("The House");
+Player NPC1 = Player("Krin");
+Player NPC2 = Player("La Mekarda");
+Player NPC3 = Player("Jotita Suaj");
 
 // Automatic selection in NPC turns
 int NPCTurn(Player NPC) {
@@ -76,7 +79,7 @@ void Resolution (Player foo, Player casino) {
 int main() {
     // Start
     system("cls");
-    cout << "How should I call you?\n";
+    cout << "How should I call you? ";
     string playerName;
     cin >> playerName;
     player.SetName(playerName);
@@ -115,7 +118,7 @@ int main() {
                 break;
 
             } else if (election == 2) {
-                cout << player.GetName() << "pass his turn\n" << endl;
+                cout << player.GetName() << " pass his turn\n" << endl;
                 system("PAUSE");
                 system("cls");
                 break;
@@ -127,8 +130,8 @@ int main() {
             }
         }
         // NPC Turns
+        // House
         house.SetPoints(CountPoints(house)); 
-
         if (NPCTurn(house) == 1) {
             house.SetHand(deck.GetRandCard());
             cout << house.GetName() <<" draws a card\n" << endl;
@@ -138,7 +141,43 @@ int main() {
             cout << house.GetName() << " pass his turn\n" << endl;
             system("PAUSE");
         }
-        
+        // NPC1
+        system("cls");
+        NPC1.SetPoints(CountPoints(NPC1)); 
+        if (NPCTurn(NPC1) == 1) {
+            NPC1.SetHand(deck.GetRandCard());
+            cout << NPC1.GetName() <<" draws a card\n" << endl;
+            system("PAUSE");
+
+        } else {
+            cout << NPC1.GetName() << " pass his turn\n" << endl;
+            system("PAUSE");
+        }
+        // NPC2
+        system("cls");
+        NPC2.SetPoints(CountPoints(NPC2)); 
+        if (NPCTurn(NPC2) == 1) {
+            NPC2.SetHand(deck.GetRandCard());
+            cout << NPC2.GetName() <<" draws a card\n" << endl;
+            system("PAUSE");
+
+        } else {
+            cout << NPC2.GetName() << " pass his turn\n" << endl;
+            system("PAUSE");
+        }
+        // NPC3
+        system("cls");
+        NPC3.SetPoints(CountPoints(NPC3)); 
+        if (NPCTurn(NPC3) == 1) {
+            NPC3.SetHand(deck.GetRandCard());
+            cout << NPC3.GetName() <<" draws a card\n" << endl;
+            system("PAUSE");
+
+        } else {
+            cout << NPC3.GetName() << " pass his turn\n" << endl;
+            system("PAUSE");
+        }
+
         ++roundNumber;
         --rounds;
     }
