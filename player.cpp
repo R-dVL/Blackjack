@@ -45,7 +45,7 @@ void Player::EraseCard(string type, string card) {
 }
 // Shows Hand
 void Player::ShowHand() const {
-    cout << this->name << " hand:\nType\tCard\n";
+    cout << this->name << "'s hand:\nType\tCard\n";
    for (auto iter = this->hand.begin(); iter != this->hand.end(); ++iter )
       cout << iter->first << '\t' << iter->second << '\n';
       cout << endl;
