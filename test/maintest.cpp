@@ -1,5 +1,5 @@
-#include "../include/player.hpp"
-#include "../include/deck.hpp"
+#include "player.hpp"
+#include "deck.hpp"
 
 using namespace std;
 

@@ -1,4 +1,4 @@
-#include "deck.hpp"
+#include "../include/deck.hpp"
 
 //Constructor
 Deck::Deck(void) {
