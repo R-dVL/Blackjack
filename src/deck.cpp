@@ -68,10 +68,15 @@ void Deck::SetDeck(string type, string value) {
 }
 // Deck Card Eraser
 void Deck::EraseCard(string type, string card) {
-    for (auto iter = this->deck.begin(); iter != this->deck.end(); ++iter )
-      if ((iter->first == type) && (iter->second == card)) {
-        deck.erase(iter);
-      }
+  typedef multimap<string, string>::iterator iterator;
+  pair<iterator, iterator> iterpair = this->deck.equal_range(type);
+  iterator it = iterpair.first;
+  for (; it != iterpair.second; ++it) {
+    if (it->second == card) { 
+        this->deck.erase(it);
+        break;
+    }
+  }
 }
 // Shows Deck Map
 void Deck::ShowCards(void) const {
@@ -92,7 +97,8 @@ map<string, string> Deck::GetRandCard(void) {
         type = iter->first;
         card = iter->second;
     }
-    this->EraseCard(type, card);
     result.insert(pair<string, string>(type, card));
+    // Erasing the card from deck
+    this->EraseCard(type, card);
     return result;
 }

@@ -135,6 +135,7 @@ int main() {
         if (NPCTurn(house) == 1) {
             house.SetHand(deck.GetRandCard());
             cout << house.GetName() <<" draws a card\n" << endl;
+            house.ShowHand();
             system("PAUSE");
 
         } else {
@@ -147,6 +148,7 @@ int main() {
         if (NPCTurn(NPC1) == 1) {
             NPC1.SetHand(deck.GetRandCard());
             cout << NPC1.GetName() <<" draws a card\n" << endl;
+            NPC1.ShowHand();
             system("PAUSE");
 
         } else {
@@ -159,6 +161,7 @@ int main() {
         if (NPCTurn(NPC2) == 1) {
             NPC2.SetHand(deck.GetRandCard());
             cout << NPC2.GetName() <<" draws a card\n" << endl;
+            NPC2.ShowHand();
             system("PAUSE");
 
         } else {
@@ -171,6 +174,7 @@ int main() {
         if (NPCTurn(NPC3) == 1) {
             NPC3.SetHand(deck.GetRandCard());
             cout << NPC3.GetName() <<" draws a card\n" << endl;
+            NPC3.ShowHand();
             system("PAUSE");
 
         } else {

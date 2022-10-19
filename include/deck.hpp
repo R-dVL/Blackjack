@@ -1,9 +1,7 @@
 #include <iostream>
 #include <string>
 #include <map>
-#include <cstdlib>
 #include <ctime>
-#include <vector>
 
 using namespace std;
 
