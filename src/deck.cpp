@@ -57,7 +57,6 @@ Deck::Deck(void) {
         {"Spades", "K"},
     };
 }
-
 // Deck Getter
 multimap<string, string> Deck::GetDeck(void) const {
     return this->deck;

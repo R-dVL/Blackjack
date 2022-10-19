@@ -2,11 +2,9 @@
 #include <string>
 #include <map>
 
-
 using namespace std;
 
 class Player {
-
     private:
         string name;   // Player name
         int points;     // Player points

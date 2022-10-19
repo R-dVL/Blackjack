@@ -60,19 +60,36 @@ int CountPoints(Player jugador) {
     }
     return points;
 }
-// Resolution
+// Game Resolution
 void Resolution (Player foo, Player casino) {
-    cout << foo.GetName() << " have " << foo.GetPoints() << " points." << endl;
-    cout << casino.GetName() << " have " << casino.GetPoints() << " points." << endl;
+    // Player/NPC Hand
+    system("cls");
+    cout << foo.GetName() << " shows his hand: \n" << endl;
+    foo.ShowHand();
+    cout << foo.GetName() << "'s points: " << foo.GetPoints() << endl;
+    cout << endl;
+    system("PAUSE");
+    // The House Hand
+    system("cls");
+    cout << casino.GetName() << " shows his hand: \n" << endl;
+    casino.ShowHand();
+    cout << casino.GetName() << "'s points: " << casino.GetPoints() << endl;
+    cout << endl;
+    system("PAUSE");
+    //Resolution
+    system("cls");
+    cout << foo.GetName() << " have " << foo.GetPoints() << " points.\n" << endl;
+    cout << casino.GetName() << " have " << casino.GetPoints() << " points.\n" << endl;
     if ((foo.GetPoints() == 21) && (casino.GetPoints() != 21)) {
-        cout << "¡BlackJack!\n" << endl;
+        cout << "BlackJack!" << endl;
     } else if ((foo.GetPoints() > casino.GetPoints()) && (foo.GetPoints() < 21)) {
-        cout << "You won!\n" << endl;
+        cout << "You won!" << endl;
     } else if ((foo.GetPoints() < 21) && (casino.GetPoints() > 21)) {
-        cout << "That was close...\n" << endl;
+        cout << "That was close..." << endl;
     } else {
         cout << "The House always win.\n" << endl;
     }
+    cout << endl;
     system("PAUSE");
 }
 // Game
@@ -135,7 +152,6 @@ int main() {
         if (NPCTurn(house) == 1) {
             house.SetHand(deck.GetRandCard());
             cout << house.GetName() <<" draws a card\n" << endl;
-            house.ShowHand();
             system("PAUSE");
 
         } else {
@@ -148,7 +164,6 @@ int main() {
         if (NPCTurn(NPC1) == 1) {
             NPC1.SetHand(deck.GetRandCard());
             cout << NPC1.GetName() <<" draws a card\n" << endl;
-            NPC1.ShowHand();
             system("PAUSE");
 
         } else {
@@ -161,7 +176,6 @@ int main() {
         if (NPCTurn(NPC2) == 1) {
             NPC2.SetHand(deck.GetRandCard());
             cout << NPC2.GetName() <<" draws a card\n" << endl;
-            NPC2.ShowHand();
             system("PAUSE");
 
         } else {
@@ -174,7 +188,6 @@ int main() {
         if (NPCTurn(NPC3) == 1) {
             NPC3.SetHand(deck.GetRandCard());
             cout << NPC3.GetName() <<" draws a card\n" << endl;
-            NPC3.ShowHand();
             system("PAUSE");
 
         } else {
@@ -186,27 +199,15 @@ int main() {
         --rounds;
     }
     // Points count
-    // Player
-    system("cls");
-    cout << player.GetName() << " shows his hand: \n" << endl;
-    player.ShowHand();
-    cout << endl;
     player.SetPoints(CountPoints(player)); 
-    cout << player.GetName() << "'s points: " << player.GetPoints() << endl;
-    cout << endl;
-    system("PAUSE");
-
-    // The House
-    system("cls");
-    cout << house.GetName() << " shows his hand: \n" << endl;
-    house.ShowHand();
-    cout << endl;
     house.SetPoints(CountPoints(house)); 
-    cout << house.GetName() << "'s points: " << house.GetPoints() << endl;
-    cout << endl;
-    system("PAUSE");
-
+    NPC1.SetPoints(CountPoints(NPC1)); 
+    NPC2.SetPoints(CountPoints(NPC2)); 
+    NPC3.SetPoints(CountPoints(NPC3)); 
     // Game Resolution
     system("cls");
     Resolution(player, house);
+    Resolution(NPC1, house);
+    Resolution(NPC2, house);
+    Resolution(NPC3, house);
 }
