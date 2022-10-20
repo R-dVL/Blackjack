@@ -1,0 +1,17 @@
+[
+{
+  "directory": "C:/Users/stc/Documents/GitHub/Blackjack/build",
+  "command": "C:\\MinGW\\bin\\g++.exe   -g -o CMakeFiles\\Blackjack.dir\\src\\main.cpp.obj -c C:\\Users\\stc\\Documents\\GitHub\\Blackjack\\src\\main.cpp",
+  "file": "C:/Users/stc/Documents/GitHub/Blackjack/src/main.cpp"
+},
+{
+  "directory": "C:/Users/stc/Documents/GitHub/Blackjack/build",
+  "command": "C:\\MinGW\\bin\\g++.exe   -g -o CMakeFiles\\Blackjack.dir\\src\\player.cpp.obj -c C:\\Users\\stc\\Documents\\GitHub\\Blackjack\\src\\player.cpp",
+  "file": "C:/Users/stc/Documents/GitHub/Blackjack/src/player.cpp"
+},
+{
+  "directory": "C:/Users/stc/Documents/GitHub/Blackjack/build",
+  "command": "C:\\MinGW\\bin\\g++.exe   -g -o CMakeFiles\\Blackjack.dir\\src\\deck.cpp.obj -c C:\\Users\\stc\\Documents\\GitHub\\Blackjack\\src\\deck.cpp",
+  "file": "C:/Users/stc/Documents/GitHub/Blackjack/src/deck.cpp"
+}
+]
