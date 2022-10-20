@@ -58,17 +58,17 @@ Deck::Deck(void) {
     };
 }
 // Deck Getter
-multimap<string, string> Deck::GetDeck(void) const {
+std::multimap<std::string, std::string> Deck::GetDeck(void) const {
     return this->deck;
 }
 // Deck Setter
-void Deck::SetDeck(string type, string value) {
-    this->deck.insert(pair<string, string>(type, value));
+void Deck::SetDeck(std::string type, std::string value) {
+    this->deck.insert(std::pair<std::string, std::string>(type, value));
 }
 // Deck Card Eraser
-void Deck::EraseCard(string type, string card) {
-  typedef multimap<string, string>::iterator iterator;
-  pair<iterator, iterator> iterpair = this->deck.equal_range(type);
+void Deck::EraseCard(std::string type, std::string card) {
+  typedef std::multimap<std::string, std::string>::iterator iterator;
+  std::pair<iterator, iterator> iterpair = this->deck.equal_range(type);
   iterator it = iterpair.first;
   for (; it != iterpair.second; ++it) {
     if (it->second == card) { 
@@ -79,24 +79,24 @@ void Deck::EraseCard(string type, string card) {
 }
 // Shows Deck Map
 void Deck::ShowCards(void) const {
-    cout << "Deck:\nType\tCard\n";
+    std::cout << "Deck:\nType\tCard\n";
    for (auto iter = this->deck.begin(); iter != this->deck.end(); ++iter )
-      cout << iter->first << '\t' << iter->second << '\n';
-      cout << endl;
+      std::cout << iter->first << '\t' << iter->second << '\n';
+      std::cout << std::endl;
 }
 // Gets Random Card From Deck
-map<string, string> Deck::GetRandCard(void) {
+std::map<std::string, std::string> Deck::GetRandCard(void) {
     srand (time(NULL));
-    string type;
-    string card;
-    map<string, string> result;
+    std::string type;
+    std::string card;
+    std::map<std::string, std::string> result;
     for (int i = this->deck.size(); i != 0; --i) {
-        multimap<string, string>::iterator iter = this->deck.begin();
+        std::multimap<std::string, std::string>::iterator iter = this->deck.begin();
         advance(iter, rand() % this->deck.size());
         type = iter->first;
         card = iter->second;
     }
-    result.insert(pair<string, string>(type, card));
+    result.insert(std::pair<std::string, std::string>(type, card));
     // Erasing the card from deck
     this->EraseCard(type, card);
     return result;

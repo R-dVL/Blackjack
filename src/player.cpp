@@ -1,13 +1,13 @@
 #include "../include/player.hpp"
 
 // Constructor
-Player::Player(const string name) {
+Player::Player(const std::string name) {
     this->name = name;
     this->points = 0;
     this->hand;
 }
 // Name Getter
-string Player::GetName(void) const {
+std::string Player::GetName(void) const {
     return this->name;
 }
 // Name Setter
@@ -23,21 +23,21 @@ void Player::SetPoints(int points) {
     this->points = points;
 }
 // Hand Getter
-multimap<string, string> Player::GetHand() const {
+std::multimap<std::string, std::string> Player::GetHand() const {
     return this->hand;
 }
 // Hand Setter
-void Player::SetHand(map<string, string> cards) {
-    string type;
-    string card;
+void Player::SetHand(std::map<std::string, std::string> cards) {
+    std::string type;
+    std::string card;
     for (auto iter = cards.begin(); iter != cards.end(); ++iter) {
         type = iter->first;
         card = iter->second;
     }
-    this->hand.insert(pair<string, string>(type, card));
+    this->hand.insert(std::pair<std::string, std::string>(type, card));
 }
 // Hand Card Eraser
-void Player::EraseCard(string type, string card) {
+void Player::EraseCard(std::string type, std::string card) {
     for (auto iter = this->hand.begin(); iter != this->hand.end(); ++iter )
       if ((iter->first == type) && (iter->second == card)) {
         hand.erase(iter);
@@ -45,9 +45,9 @@ void Player::EraseCard(string type, string card) {
 }
 // Shows Hand
 void Player::ShowHand() const {
-    cout << this->name << "'s hand:\nType\tCard\n";
-    cout << "=====\t=====" << endl;;
+    std::cout << this->name << "'s hand:\nType\tCard\n";
+    std::cout << "=====\t=====" << std::endl;;
    for (auto iter = this->hand.begin(); iter != this->hand.end(); ++iter )
-      cout << iter->first << ", " << iter->second << '\n';
-      cout << endl;
+      std::cout << iter->first << ", " << iter->second << '\n';
+      std::cout << std::endl;
 }

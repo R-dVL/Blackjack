@@ -2,22 +2,20 @@
 #include <string>
 #include <map>
 
-using namespace std;
-
 class Player {
     private:
-        string name;   // Player name
+        std::string name;   // Player name
         int points;     // Player points
-        multimap<string, string> hand;   // Types and Cards
+        std::multimap<std::string, std::string> hand;   // Types and Cards
     
     public:
-        Player(const string name);  // Constructor
-        string GetName(void) const;  // Name Getter
+        Player(const std::string name);  // Constructor
+        std::string GetName(void) const;  // Name Getter
         void SetName(const std::string name);  // Name Setter
         int GetPoints(void) const;  // Points getter
         void SetPoints(const int points);  // Points Setter
-        multimap<string, string> GetHand() const;  // Hand Getter
-        void SetHand(map<string, string> cards);  // Hand Setter
-        void EraseCard(string type, string value); // Card Eraser
+        std::multimap<std::string, std::string> GetHand() const;  // Hand Getter
+        void SetHand(std::map<std::string, std::string> cards);  // Hand Setter
+        void EraseCard(std::string type, std::string value); // Card Eraser
         void ShowHand() const; // Show Hand
 };

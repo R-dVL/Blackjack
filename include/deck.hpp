@@ -3,17 +3,15 @@
 #include <map>
 #include <ctime>
 
-using namespace std;
-
 class Deck {
     private:
-        multimap<string, string> deck;   // Types and Cards
+        std::multimap<std::string, std::string> deck;   // Types and Cards
 
     public:
         Deck(void);  // Constructor
-        multimap<string, string> GetDeck(void) const;  // Hand Getter
-        void SetDeck(string type, string value);  // Hand Setter
-        void EraseCard(string type, string value); // Card Eraser
+        std::multimap<std::string, std::string> GetDeck(void) const;  // Hand Getter
+        void SetDeck(std::string type, std::string value);  // Hand Setter
+        void EraseCard(std::string type, std::string value); // Card Eraser
         void ShowCards(void) const; // Shows Deck Cards
-        map<string, string> GetRandCard(void);
+        std::map<std::string, std::string> GetRandCard(void);
 };
